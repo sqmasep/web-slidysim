@@ -1,0 +1,60 @@
+main{
+    margin: auto;
+    margin-top: var(--nav-height);
+    width: 50%;
+    padding: 2em;
+}
+
+
+
+
+main .wr-list{
+    margin: auto;
+    border-collapse: collapse;
+    font-family: var(--f-sec);
+    font-weight: 500;
+    width: 100%;
+}
+main .wr-list th{padding: .5em 0; font-weight: 900; font-size: 1.3em;}
+main .wr-list td{padding: .5em 0; text-align: center;}
+
+
+
+
+main .wr-rank{ /* WR rank */
+    /* position: fixed;
+    right: 7.5%;
+    top: var(--nav-height); */
+    border-collapse: collapse;
+    font-family: var(--f-sec);
+    font-weight: 500;
+    text-align: left;
+    margin: 2em 0 0 0;
+
+}
+.wr-rank .title th{ /* WR Count */
+    font-size: 1.5em;
+    text-align: center;
+    padding: .5em;
+}
+.wr-rank th, .wr-rank td{
+    padding: .2em 1em;
+}
+
+
+.excluding{
+    font-style: italic;
+    font-size: 1em;
+    padding: 1em 0;
+}
+
+@media (max-width: 1441px){
+    main{
+        width: 100%;
+    }
+   
+
+}
+
+
+

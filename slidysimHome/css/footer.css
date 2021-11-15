@@ -1,0 +1,25 @@
+footer{
+    background-color: #181A1B;
+    color: #E8E6E3;
+
+    display: flex;
+    justify-content: center;
+    gap: 25em;
+    padding: 5em 0;
+
+}
+footer h1{
+    font-family: var(--f-main), serif;
+    padding: 1em 0;
+}
+footer p{
+    font-family: var(--f-sec), sans-serif;
+    padding: .5em 0;
+    color: hsl(var(--gray));
+}
+footer a{
+    transition: .2s;
+    font-family: var(--f-sec), sans-serif;
+    text-decoration: none;
+    color: hsl(var(--gray));
+}

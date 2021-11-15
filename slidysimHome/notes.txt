@@ -1,0 +1,16 @@
+add the following links:
+
+
+download.html:
+- download for windows (maybe gather both libraries and binary in the same zip?)
+- download for linux   (maybe gather both libraries and binary in the same zip?)
+
+
+in the navbar:
+- Dynamic update (when you do !update)
+
+
+
+things to change:
+- menu in the dynamic update
+

@@ -1,0 +1,205 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************************************[ MAIN ]********************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+main{
+    
+}
+main h1{
+    margin: 1em 0;
+    font-family: var(--f-main), serif;
+    font-size: 3em;
+    line-height: 1.1;
+    column-span: all;
+    position: relative;
+}
+main .title{width: 70%; margin: auto;}
+main h1::after{ /* underline the title */
+    content: "";
+    width: 10%;
+    height: 0.1em;
+    background-color: hsl(var(--clr-main));
+    bottom: -30%;
+    left: 0;
+    position: absolute;
+}
+main p, main ol{
+    font-family: var(--f-sec), sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+main > section{padding: 10em 0;}
+
+
+
+
+
+.slidysim-description{
+    columns: 3;
+    width: 70%;
+    margin: auto;
+    
+}
+
+
+
+
+.top-players{
+    color: white;
+    background-color: hsl(var(--black));
+    width: 100%;
+    
+}
+.player-grid{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    position: relative;
+}
+.player-grid + .player-grid::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    margin: auto;
+    width: 30%;
+    height: 0.02em;
+    background-color: hsl(var(--gray), 0.2);
+}
+.player-grid + .player-grid{
+    margin-top: 10em;
+    padding-top: 10em;
+}
+
+
+
+
+
+
+
+
+.player-grid .nick{ /* nickname & img */
+    /* background-color: rgb(185, 90, 90); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.player-grid .nick > img{ /* profile pic */
+    width: 15%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+
+.flag{
+    width: auto;
+    height: 1em;
+    margin: auto;
+}
+
+
+.player-grid .nick p{ /* nickname */
+    font-family: var(--f-sec), sans-serif;
+    font-weight: 200;
+    font-size: 2em;
+    display: flex;
+    gap: 0.5em;
+    margin: auto;
+}
+.player-grid .place{
+    font-family: var(--f-sec);
+    font-weight: 500;
+}
+
+.player-grid .informations{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+
+
+.informations span{ /* nickname tags*/
+    font-family: var(--f-sec), sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    color: black;
+    padding: 0.125em 0.25em;
+    border-radius: 0.1em;
+}
+.player-grid .nick a{ /* youtube link */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.fa-youtube{ /* youtube icon */
+    color: hsl(var(--crimson));
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+} 
+
+
+
+
+
+
+
+
+
+
+.player-grid .description{ /* description of the player */
+    /* background-color: rgb(83, 83, 148); */
+    width: 50%;
+    margin: auto;
+}
+.player-grid .description p{
+    margin-top: 1em;
+
+    font-weight: 200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+[tier="gamma"]       { background-color: #00ffff; }
+[tier="aleph"]       { background-color: #00ff2a; }
+[tier="ascended"]    { background-color: #ff2262; }
+[tier="nova"]        { background-color: #7900ff; }
+[tier="grandmaster"] { background-color: #ffd700; }
+[tier="master"]      { background-color: #ec44ca; }
+[tier="diamond"]     { background-color: #b9f2ff; }
+[tier="platinum"]    { background-color: #2fcfc2; }
+[tier="gold"]        { background-color: #cab148; }
+[tier="silver"]      { background-color: #cbd9e6; }
+[tier="bronze"]      { background-color: #b45f06; }
+[tier="beginner"]    { background-color: #93c47d; }
+[tier="unranked"]    { background-color: #666666; }
+
+[tier="admin"]       { background-color: hsl(var(--crimson), 1); }
+[tier="mod"]         { background-color: hsl(var(--crimson), 1); }
+
+.nick span[tier="first"]       {color: #cab148;}
+.nick span[tier="second"]      {color: #a7a7a7;}
+.nick span[tier="third"]       {color: rgb(126, 70, 24);}
+.nick span[tier="not-in-top-3"]{color: rgb(255, 255, 255);}

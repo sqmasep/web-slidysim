@@ -1,0 +1,116 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/**************************************[ NAV ]**********************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: white;
+    z-index: 999;
+    outline: 1px solid hsl(var(--black), 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-sec), sans-serif;
+    font-weight: 800;
+}
+
+
+nav div{
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav > div+div{padding: 0 3em;}
+nav div:nth-child(2){ /* moves every menu to the right except the first one which is the home button */
+    margin-left: auto;
+}
+nav a{text-decoration: none; color: black;}
+
+.logo-container{
+    justify-content: space-around;
+    gap: 1em;
+    cursor: pointer;
+    transition: .2s;
+}
+.logo-container:hover{
+    background-color: hsl(var(--black), 0.1);
+}
+.logo{aspect-ratio: 1; position: relative; transition: .5s;} /* "15" square */
+.logo img{
+    width: 80%;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    position: absolute;
+    transition: .5s;
+}
+.logo-container:hover img{transform: rotateX(0);}
+.logo-container:hover .logo{background-color: #0000;}
+
+
+
+
+
+.menu{position: relative; cursor: default; transition: .2s;}
+.menu:hover .submenu{display: flex;}
+.submenu{
+    display: none;
+    flex-direction: column;
+    height: auto;
+    position: absolute;
+    top: var(--nav-height);
+    
+    width: 100%;
+    padding: 0;
+    background-color: white;
+    border: 1px solid hsl(var(--black), 0.2);
+}
+.submenu a{
+    width: 100%;
+    padding: 1em 0.5em;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+}
+.submenu a:hover{
+    background-color: hsl(var(--clr-main), 1);
+    color: white;
+}
+
+
+nav .download-btn{
+    outline: none;
+    font-weight: 800;
+    background-color: #0000;
+    color: hsl(var(--clr-main));
+}
+nav .download-btn p{position: relative;}
+nav .download-btn p::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    left: 0;
+    bottom: -0.5em;
+    height: 0.125em;
+    transition: .5s;
+    background-image: linear-gradient(90deg, hsl(var(--clr-main)), hsl(var(--clr-main)));
+}
+nav .download-btn:hover p::after{
+    width: 100%;
+}
+
+
+
+.discord{cursor: pointer;}
+.discord:hover{color: #5865F2;}
+
+
+

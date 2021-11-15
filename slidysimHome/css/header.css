@@ -1,0 +1,258 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*************************************[ HEADER ]********************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+header{
+    background-image: radial-gradient(#0000, hsl(var(--white)));
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.puzzle-container{ /* has the Slidysim name + the puzzle box & stats*/
+    font-size: 75px;
+    font-weight: bold;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.puzzle-container > div:first-child p{ /* Slidysim name */
+    font-family: var(--f-main), serif;
+    font-weight: 200;
+    font-size: 1.5em;
+    cursor: default;
+}
+
+
+
+.download-btn{ /* download button */
+    border: 0;
+    outline: 2px solid hsl(var(--clr-main));
+    font-family: var(--f-sec), sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 1em 2em;
+    background-color: hsl(var(--clr-main));
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+    position: relative;
+}
+.download-btn:hover{
+    background-color: #0000;
+    color: hsl(var(--clr-main));
+}
+
+
+/************************************************/
+/************************************************/
+/*************** cuboid shape *******************/
+/************************************************/
+/************************************************/
+
+.puzzle-box{
+    width: var(--puzzle-size);
+    aspect-ratio: 1;
+
+    position: relative;
+    bottom: -50%;
+    right: 0;
+
+    perspective: 90rem;
+    perspective-origin: 50% -5em;
+    transform-style: preserve-3d;
+    transform: scale(3) rotateX(-15deg) rotateY(-20deg);
+    animation: rotation 20s infinite linear;
+    /* background-color: chocolate; */
+}
+@keyframes rotation {
+    50%  {transform: scale(3) rotateX(-15deg) rotateY(-10deg);}
+    100%{transform: scale(3) rotateX(-15deg) rotateY(-20deg);}
+}
+
+/*********************************************/
+/*********** setting up the sides ************/
+/*********************************************/
+
+.side{ 
+    position: absolute;
+    background: rgb(255, 255, 255);
+    transform: rotateX(-0deg) rotateY(-20deg);
+}
+.front, .back {
+    width: 100%;
+    height: 10%;
+}
+.left, .right{
+    width: 100%;
+    height: 10%;
+}
+.top, .bottom{
+    width: var(--puzzle-size);
+}
+.front { transform: translateZ( calc(var(--puzzle-size) / 2) ); background-image: linear-gradient(180deg, #0001, #0000);}
+.back  { transform: rotateY(180deg) translateZ( calc(var(--puzzle-size) / 2) ); }
+.right { transform: rotateY(90deg)  translateZ( calc(var(--puzzle-size) / 2) ); background-image: linear-gradient(180deg, #0001, #0000); }
+.left  { transform: rotateY(270deg) translateZ( calc(var(--puzzle-size) / 2) ); }
+.top   { transform: translateY(-50%) rotateX(90deg);}
+.bottom{ transform: translateY(-40%) rotateX(90deg);}
+
+
+
+/*********************************************/
+/********* tiles & stats (top face) **********/
+/*********************************************/
+
+.puzzle{ /* everything on the top face */
+    z-index: 1;
+    background: white;
+    max-width: 100%;
+    aspect-ratio: 1;
+
+    font-size: 12px;
+    text-align: center;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: blur 1s forwards;
+}
+@keyframes blur {
+    to  { opacity: 1; }
+}
+
+
+
+/****************************/
+/********** TILES ***********/
+/****************************/
+
+.tiles-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "one two three four"
+    "five six seven eight"
+    "nine ten eleven twelve"
+    "thirteen fourteen fifteen zeroo";
+    width: 90%;
+    aspect-ratio: 1;
+    /* gap: 0.1em; */
+}
+
+.puzzle *::selection{background-color: transparent; color: black;}
+
+.tiles-container > div{
+    width: 100%;
+    aspect-ratio: 1;
+
+    font-family: sans-serif;
+    font-size: 1.1em;
+    cursor: default;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    filter: grayscale(100%);
+    animation: tilesDown 1s ease-in-out forwards;
+    transition: 1s;
+    
+    z-index: 10;
+}
+
+[red]   {background: #ff6767;}
+[yellow]{background: #fff153;}
+[green] {background: #78ff5d;}
+[cyan]  {background: #73ffdc;}
+[blue]  {background: #87afff;}
+[purple]{background: #d08fff;}
+
+
+
+
+
+/**********************/
+/* COOL EFFECT BEFORE THE SOLVE */
+/**********************/
+
+@keyframes tilesDown {
+    to{transform: translate(0, 0); filter: grayscale(0);}
+}
+
+.tiles-container > div:nth-child(1){transform: translate(-75%, -100%);   animation-delay: 0.1s; animation-duration: 1.5s; }
+.tiles-container > div:nth-child(2){transform: translate(-150%, -200%);  animation-delay: 0.3s; animation-duration: 1.8s; }
+.tiles-container > div:nth-child(3){transform: translate(-200%, -150%);  animation-delay: 0.6s; animation-duration: 1.9s; z-index: 11;}
+.tiles-container > div:nth-child(4){transform: translate(-50%, -100%);   animation-delay: 0.1s; animation-duration: 1.7s;}
+.tiles-container > div:nth-child(5){transform: translate(-100%, -350%);  animation-delay: 0.4s; animation-duration: 1.0s;}
+.tiles-container > div:nth-child(6){transform: translate(-120%, -300%);  animation-delay: 0.6s; animation-duration: 1.65s; z-index: 11;}
+.tiles-container > div:nth-child(7){transform: translate(-40%, -240%);   animation-delay: 0.3s; animation-duration: 1.4s;}
+.tiles-container > div:nth-child(8){transform: translate(-20%, -20%);    animation-delay: 0.5s; animation-duration: 1.9s;}
+.tiles-container > div:nth-child(9){transform: translate(-20%, -20%);    animation-delay: 0.4s; animation-duration: 1.75s;}
+.tiles-container > div:nth-child(10){transform: translate(-20%, -20%);   animation-delay: 0.7s; animation-duration: 1.5s;}
+.tiles-container > div:nth-child(11){transform: translate(-10%, -285%);  animation-delay: 0.4s; animation-duration: 1.0s;}
+.tiles-container > div:nth-child(12){transform: translate(-30%, -200%);  animation-delay: 0.5s; animation-duration: 1.2s;}
+.tiles-container > div:nth-child(13){transform: translate(-37%, -185%);  animation-delay: 0.2s; animation-duration: 1.0s;}
+.tiles-container > div:nth-child(14){transform: translate(-12%, -222%);  animation-delay: 0.1s; animation-duration: 1.6s;}
+.tiles-container > div:nth-child(15){transform: translate(-27%, -56%);   animation-delay: 0.3s; animation-duration: 1.4s;}
+
+
+
+/**********************/
+/**** WR SCRAMBLE *****/
+/**********************/
+
+.tiles-container > div:nth-child(1){grid-area: one; }
+.tiles-container > div:nth-child(2){grid-area: two;}
+.tiles-container > div:nth-child(3){grid-area: eight;} /* the number 3 goes to [the eighth tile in a solved state] */
+.tiles-container > div:nth-child(4){grid-area: three;}
+.tiles-container > div:nth-child(5){grid-area: thirteen;}
+.tiles-container > div:nth-child(6){grid-area: nine;}
+.tiles-container > div:nth-child(7){grid-area: six;}
+.tiles-container > div:nth-child(8){grid-area: four;}
+.tiles-container > div:nth-child(9){grid-area: fourteen;}
+.tiles-container > div:nth-child(10){grid-area: eleven;}
+.tiles-container > div:nth-child(11){grid-area: five;}
+.tiles-container > div:nth-child(12){grid-area: twelve;}
+.tiles-container > div:nth-child(13){grid-area: fifteen;}
+.tiles-container > div:nth-child(14){grid-area: ten;}
+.tiles-container > div:nth-child(15){grid-area: zeroo;}
+.tiles-container > div:nth-child(16){grid-area: seven;}
+
+
+
+
+
+/**********************/
+/******* STATS ********/
+/**********************/
+
+.puzzle .stats{
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-family: var(--f-third), serif;
+    font-weight: 400;
+}
+.puzzle .stats h1{
+    padding: 1em;
+    font-size: 0.5em;
+}
+

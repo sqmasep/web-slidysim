@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Slidysim</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="img/egg.png"/>
+    <link rel="stylesheet" href="css/style.css" />
+    
+</head>
+
+<body>
+    <nav>
+        <div class="logo-container" onclick="window.location.href='index.html'">
+            <div purple class="logo">15<img src="img/egg.png" alt="egg!"></div>
+            <a>Slidysim v28.3</a>
+        </div>
+
+        <div class="download-btn" onclick="window.location.href='download.html'"><p><i class="fas fa-download"></i>Download</p></div>
+        <div class="menu">
+            <p><i class="fas fa-globe-europe"></i>World Records</p>
+            <div class="submenu">
+                <a href="nxn-wr-time.html">NxN WRs (Time)</a>
+                <a href="nxm-wr-time.html">NxM all WRs (Time)</a>
+                <a href="nxn-wr-mvc.html">NxN WRs (Movecount)</a>
+                <a href="nxm-wr-mvc.html">NxM all WRs (Movecount)</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <p><i class="fas fa-medal"></i>Ranking</p>
+            <div class="submenu">
+                <a>Dynamic update</a>
+                <a href="https://docs.google.com/spreadsheets/d/1Rc6hCE74sSwRIrgmp6DWVV5k9oKBsQeIyo6cX5xhKIo/edit#gid=1840954609" target="_blank">Google Sheet Movecount update</a>
+                <a href="https://docs.google.com/spreadsheets/d/1DEOPBE3ZhxEt9UGve2gGJLbGT2VrYMTzj9oXoab4FmQ/edit#gid=1807348172" target="_blank">KinchRanks</a>
+            </div>
+        </div>
+
+        <div class="menu discord" onclick="window.open('https://discord.gg/7vXrWAS3yZ', '_blank')"><i class="fab fa-discord"></i>Discord</div>
+        
+    </nav>
+
+
+
+
+    <header>
+
+        <div class="puzzle-container">
+            <div>
+                <p>Slidysim</p>
+                <button class="download-btn" onclick="window.location.href='download.html'">DOWNLOAD</button>
+            </div>
+            <div class="puzzle-box">
+                <div class="top side">
+                    <div class="puzzle">
+                        <div class="tiles-container">
+                            <div red>1</div>
+                            <div red>2</div>
+                            <div red>3</div>
+                            <div red>4</div>
+                            <div yellow>5</div>
+                            <div green>6</div>
+                            <div green>7</div>
+                            <div green>8</div>
+                            <div yellow>9</div>
+                            <div cyan>10</div>
+                            <div blue>11</div>
+                            <div blue>12</div>
+                            <div yellow>13</div>
+                            <div cyan>14</div>
+                            <div purple>15</div>
+                            <div white></div>
+                        </div>
+                        <div class="stats">
+                            <div>
+                                <h1>Time</h1>
+                                <p id="time">0.000</p>
+                            </div>
+                            <div>
+                                <h1>Moves</h1>
+                                <p id="mvc">0</p>
+                            </div>
+                            <div>
+                                <h1>TPS</h1>
+                                <p id="tps">0.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom side"></div>
+                <div class="front side"></div>
+                <div class="back side"></div>
+                <div class="left side"></div>
+                <div class="right side"></div>
+                
+            </div>
+        </div>
+        <!-- <div class="over-puzzle-container"></div> -->
+
+    </header>
+
+
+    <main>
+        <section class="what">
+            <div class="title"><h1>What is Slidysim?</h1></div>
+
+            <div class="slidysim-description">
+                <p>Slidysim is the best 15 Puzzle/sliding puzzle simulator for PC. It was developed by ben1996123 (who is still active in the community), having a total of 28 versions, the current one being Slidysim 28.3, which hasn't been renewed in over a year. Here are some reasons why Slidysim tops the pack of sliding puzzle simulators. First, you can play square/rectangular puzzles of any size you wish, with options of keyboard or mouse controls to suit your liking. Secondly, there are over 20 unique and fun display types, each of different difficulty and testing different abilities. Slidysim also offers several modes, such as relays, marathons, and even blindfolded mode if you're up to the challenge! Most importantly, the community is the biggest sliding puzzle community in the world!</p>
+            </div>
+        </section>
+
+
+        <section class="top-players"> <!--black section-->
+            <div class="title"><h1>Top players</h1></div>
+            
+            <div class="player-grid"><!--dphdmn-->
+                <div class="nick">
+                    <img src="img/player/dphdmn.png" alt="dphdmn profile picture">
+                    <p>
+                        <img src="img/flags/russia.png" alt="russian flag" class="flag">
+                        dphdmn
+                        <span tier='first' class="place">#1</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='admin'>Admin</span>
+                        <span tier='gamma'>Gamma</span>
+                        <a href="https://www.youtube.com/c/dphdmn/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>The undisputed champion. Unprecedented levels of TPS and decent efficiency gives him a great lead while solving, which is the result of constant determination and dedication over the course of two years. He has went to Russian national army, however he will return in July 2022.</p>
+                </div>
+            </div>
+
+
+            
+
+            <div class="player-grid"><!--Dawidluna-->
+                <div class="nick">
+                    <img src="img/player/Dawidluna.png" alt="Dawidluna profile picture">
+                    <p>
+                        <img src="img/flags/poland.png" alt="polish flag" class="flag">
+                        Dawidluna
+                        <span tier='second' class="place">#2</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='mod'>Mod</span>
+                        <span tier='aleph'>Aleph</span>
+                        <a href="https://www.youtube.com/channel/UClGkpZR3mO6QIe2rIXLJbhQ/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>The closest contender to the almighty dphdmn. Strong #2s in every ranked category, being exceptionally outstanding at 8x8, holding both single and ao5 world records.</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-grid"><!--sq-->
+                <div class="nick">
+                    <img src="img/player/sq.png" alt="sq profile picture">
+                    <p>
+                        <img src="img/flags/france.png" alt="french flag" class="flag">
+                        sq
+                        <span tier='third' class="place">#3</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='admin'>Admin</span>
+                        <span tier='aleph'>Aleph</span>
+                        <a href="https://www.youtube.com/channel/UCNbj1ZtS7pfV2TB_T6zutuw/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>Fast mouse player, #3 if vovker doesnt beat him</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-grid"><!--vodker-->
+                <div class="nick">
+                    <img src="img/player/vovker.png" alt="vodker profile picture">
+                    <p>
+                        <img src="img/flags/russia.png" alt="russian flag" class="flag">
+                        vovker
+                        <span tier='not-in-top-3' class="place">#4</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='mod'>Mod</span>
+                        <span tier='aleph'>Aleph</span>
+                        <a href="https://www.youtube.com/channel/UC1w3-l4GOZpenXa9W4PcNmg/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>A strong active player, decent at movecount and has an astonishing 2.615 4x4 relay world record</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-grid"><!--eff-->
+                <div class="nick">
+                    <img src="img/player/eff.png" alt="eff profile picture">
+                    <p>
+                        <img src="img/flags/philippines.png" alt="philippines flag" class="flag">
+                        eff
+                        <span tier='not-in-top-3' class="place">#5</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='admin'>Admin</span>
+                        <span tier='aleph'>Aleph</span>
+                        <a href="https://www.youtube.com/channel/UCBku7kEWnEOXsOlNhWwOEAA/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos repellat reprehenderit ut ullam in eos tempore nihil non natus. Inventore a voluptatum ab cupiditate!</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-grid"><!--thelegendary08-->
+                <div class="nick">
+                    <img src="img/player/thelegendary08.png" alt="thelegendary08 profile picture">
+                    <p>
+                        <img src="img/flags/malaysia.png" alt="malaysian flag" class="flag">
+                        thelegendary08
+                        <span tier='not-in-top-3' class="place">#6</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='mod'>Mod</span>
+                        <span tier='ascended'>Ascended</span>
+                        <a href="https://www.youtube.com/channel/UCyvDjf90Vz33q3qHp7wwpfg/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos repellat reprehenderit ut ullam in eos tempore nihil non natus. Inventore a voluptatum ab cupiditate!</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-grid"><!--ben1996123-->
+                <div class="nick">
+                    <img src="img/player/ben1996123.png" alt="ben1996123 profile picture">
+                    <p>
+                        <img src="img/flags/england.png" alt="english flag" class="flag">
+                        ben1996123
+                        <span tier='not-in-top-3' class="place">#9</span> 
+                    </p>
+                    <div class="informations">
+                        <span tier='admin'>Admin</span>
+                        <span tier='nova'>Nova</span>
+                        <a href="https://www.youtube.com/user/ben1996123/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div> 
+                </div>
+                <div class="description">
+                    <p>The man who created that community, without him that website wouldn't have existed</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="about">
+            <h1>About us</h1>
+            <p>Slidysim created by ben1996123</p>
+            <p>Website developed by sq & ben1996123</p>
+
+        </div>
+        <div class="contact">
+            <h1>Contact us!</h1>
+            <a href="https://discord.gg/7vXrWAS3yZ" target="_blank" class="discord"><i class="fab fa-discord"></i>Discord</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
